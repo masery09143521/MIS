@@ -1,0 +1,95 @@
+RemoveJoin C=FK_保养消耗_RELATIONS_保养记录 T=保养消耗 P=保养记录;
+
+RemoveJoin C=FK_保养记录_RELATIONS_保养项目 T=保养记录 P=保养项目;
+
+RemoveJoin C=FK_保养记录_RELATIONS_设备 T=保养记录 P=设备;
+
+RemoveJoin C=FK_保养项目_RELATIONS_设备类型 T=保养项目 P=设备类型;
+
+RemoveJoin C=FK_设备_RELATIONS_设备类型 T=设备 P=设备类型;
+
+RemoveTble C=保养消耗;
+
+RemoveTble C=保养记录;
+
+RemoveTble C=保养项目;
+
+RemoveTble C=设备;
+
+RemoveTble C=设备类型;
+
+#==============================================================
+# Table: 保养消耗
+#==============================================================
+CreateTble C=保养消耗 N="保养消耗"
+(
+   C=保养项目 T="INTEGER" P=No M=No N="保养项目" Z=false,
+   C=保养消耗 T="LONGCHAR" P=No M=No N="保养消耗" Z=false,
+   C=单位 T="TEXT(10)" P=No M=No N="单位" Z=false
+);
+
+#==============================================================
+# Table: 保养记录
+#==============================================================
+CreateTble C=保养记录 N="保养记录"
+(
+   C=保养ID T="INTEGER" P=No M=No N="保养ID" Z=false,
+   C=设备ID T="INTEGER" P=No M=No N="设备ID" Z=false,
+   C=保养项目 T="INTEGER" P=No M=No N="保养项目" Z=false,
+   C=保养人 T="LONGCHAR" P=No M=No N="保养人" Z=false,
+   C=保养内容 T="LONGCHAR" P=No M=No N="保养内容" Z=false,
+   C=保养时间 T="DATE" P=No M=No N="保养时间" Z=false
+);
+
+#==============================================================
+# Table: 保养项目
+#==============================================================
+CreateTble C=保养项目 N="保养项目"
+(
+   C=保养项目 T="INTEGER" P=No M=No N="保养项目" Z=false,
+   C=设备类型 T="TEXT(10)" P=No M=No N="设备类型" Z=false
+);
+
+#==============================================================
+# Table: 设备
+#==============================================================
+CreateTble C=设备 N="设备"
+(
+   C=设备ID T="INTEGER" P=No M=No N="设备ID" Z=false,
+   C=设备名 T="TEXT(10)" P=No M=No N="设备名" Z=false
+);
+
+#==============================================================
+# Table: 设备类型
+#==============================================================
+CreateTble C=设备类型 N="设备类型"
+(
+   C=设备ID T="INTEGER" P=No M=No N="设备ID" Z=false,
+   C=设备类型 T="TEXT(10)" P=No M=No N="设备类型" Z=false,
+   C=保养周期 T="INTEGER" P=No M=No N="保养周期" Z=false
+);
+
+CreateJoin C=FK_保养消耗_RELATIONS_保养记录 T=保养消耗 P=保养记录 D=restrict U=restrict
+(
+   
+);
+
+CreateJoin C=FK_保养记录_RELATIONS_保养项目 T=保养记录 P=保养项目 D=restrict U=restrict
+(
+   
+);
+
+CreateJoin C=FK_保养记录_RELATIONS_设备 T=保养记录 P=设备 D=restrict U=restrict
+(
+   
+);
+
+CreateJoin C=FK_保养项目_RELATIONS_设备类型 T=保养项目 P=设备类型 D=restrict U=restrict
+(
+   
+);
+
+CreateJoin C=FK_设备_RELATIONS_设备类型 T=设备 P=设备类型 D=restrict U=restrict
+(
+   
+);
