@@ -1,0 +1,54 @@
+﻿<html>
+<head><h1>设备管理系统</head>
+<body>
+<h2>一、用例图</br>
+<img src="images/用例图.png">
+<h2>二、用例说明</br>
+<table width="1000px" border="1px" cellspacing="0px" style=" border-collapse:collapse">
+<caption>用例1</caption>
+<tr><td><b>用例名称</b></td><td>设备到期预警</td><td><b>用例类型：</b></td></tr>
+<tr><td><b>优先权</b></td><td>高</td><td><b>业务需求：</b>□</td></tr>
+<tr><td><b>主要业务参与者</b></td><td>保养人</td><td></td></tr>
+<tr><td><b>描述</b></td><td>该用例描述一个设备保养员工查询设备保养到期的预警信息。系统的当前时间以及上一次保养的时间被验证。一旦验证某设备到期，就生成一个设备到期预警的页面。对于没有预警的设备，不执行预警信息的页面。<td></td><</td></tr>
+<tr><td><b>前置条件</b></td><td>保养人登录系统</td><td></td></tr>
+<tr><td><b>触发器</b></td><td>设备保养到期时，用例被触发。</td><td></td><</tr>
+<tr><td><b>典型事件过程</b></td><td><b>参与者动作</b></td><td><b>系统响应</b></td></tr>
+<tr><td></td><td>第1步：执行设备预警查询。</td><td>第2步：系统提供当前时间及设备上一次保养的时间信息，进行验证并做出响应。
+</br>第3步：一旦符合设置的提前预警天数，系统生成该设备的到期信息。
+</td></tr>
+</table>
+<br>
+<br>
+<br>
+<table width="1000px" border="1px" cellspacing="0px" style="border-collapse:collapse">
+<caption>用例2</caption>
+<tr><td><b>用例名称</b></td><td>设备保养信息录入</td><td><b>用例类型：</b></td></tr>
+<tr><td><b>优先权</b></td><td>中</td><td><b>业务需求：</b>□</td></tr>
+<tr><td><b>主要业务参与者</b></td><td>保养人</td><td></td></tr>
+<tr><td><b>描述</b></td><td>该用例描述一个设备保养员工提交一个设备保养信息的详情单。保养人的资料信息以及他的账号被验证。一旦验证某设备预警，就生成一个设备保养录入的详情单。对于没有预警的设备，不执行设备录入。</td><td></td><</tr>
+<tr><td><b>前置条件</b></td><td>设备到期预警</td><td></td><</tr>
+<tr><td><b>触发器</b></td><td>设备到期预警时，用例被触发。</td><td></td><</tr>
+<tr><td><b>典型事件过程</b></td><td><b>参与者动作</b></td><td><b>系统响应</b></td></tr>
+<tr><td></td><td>第1步：显示设备到期预警信息。</td><td>第2步：系统验证所需的设备信息做出响应。</br>
+第3步：系统根据设备号生成这个设备的详细信息（包括设备类型、保养周期及保养内容等）</br>
+第4步：系统检验录入的信息，然后保存此次设备保养记录。
+</td></tr>
+</table>
+<br>
+<br>
+<br>
+<table width="1000px" border="1px" cellspacing="0px" style="border-collapse:collapse">
+<caption>用例3</caption>
+<tr><td><b>用例名称</b></td><td>设备保养信息查询</td><td><b>用例类型：</b></td></tr>
+<tr><td><b>优先权</b></td><td>低</td><td><b>业务需求：</b>□</td></tr>
+<tr><td><b>主要业务参与者</b></td><td>主管</td><td></td></tr>
+<tr><td><b>描述</b></td><td>该用例描述一个主管查看设备的保养情况。主管的资料信息以及他的账号被验证，根据设备号查询该设备的保养信息。一旦执行查询就生成这个设备的基本信息和保养内容等信息。<td></td><</td></tr>
+<tr><td><b>前置条件</b></td><td>设备保养信息执行过录入/td><td></td><</tr>
+<tr><td><b>触发器</b></td><td>查询设备保养信息时，用例被触发。</td><td></td><</tr>
+<tr><td><b>典型事件过程</b></td><td><b>参与者动作</b></td><td><b>系统响应</b></td></tr>
+<tr><td></td><td>第1步：输入设备号。</td><td>第2步：系统验证所需的设备信息做出响应。</br>
+第3步：系统根据设备号生成这个设备的详细信息（包括设备类型、保养周期、保养内容以及材料消耗等）</br>
+</td></tr>
+</table>
+</body>
+</html>
