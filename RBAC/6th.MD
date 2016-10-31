@@ -4,7 +4,7 @@ SELECT CF_User.LoginName, CF_Privilege.PrivilegeMasterKey, CF_Privilege.Privileg
 FROM (CF_Privilege INNER JOIN Sys_Menu ON CF_Privilege.PrivilegeAccessKey = Sys_Menu.MenuID) INNER JOIN ((CF_UserRole INNER JOIN CF_User ON CF_UserRole.UserID = CF_User.UserID) INNER JOIN CF_Role ON CF_UserRole.RoleID = CF_Role.RoleID) ON CF_Privilege.PrivilegeMasterKey = CF_Role.RoleID
 WHERE (((CF_User.LoginName)="test1") AND ((CF_Privilege.PrivilegeAccess)="Sys_Menu") AND ((CF_Privilege.PrivilegeOperation)="permit"));
 ##截图
-![image](https://github.com/masery09143521/MIS/blob/master/RBAC/1.PNG)
+![image](https://github.com/masery09143521/MIS/blob/master/RBAC/1.png)
 ##伪代码
 1、根据登录名"test1"查找对应编号UserID
 2、根据UserID在user_role表查找改人员所对应的角色RoleID
@@ -20,7 +20,7 @@ SELECT CF_User.LoginName, Sys_Menu.MenuName, CF_Privilege.PrivilegeAccess, Sys_B
 FROM ((CF_Privilege INNER JOIN ((CF_UserRole INNER JOIN CF_Role ON CF_UserRole.RoleID = CF_Role.RoleID) INNER JOIN CF_User ON CF_UserRole.UserID = CF_User.UserID) ON CF_Privilege.PrivilegeMasterKey = CF_Role.RoleID) INNER JOIN Sys_Menu ON CF_Privilege.PrivilegeAccessKey = Sys_Menu.MenuID) INNER JOIN Sys_Button ON Sys_Menu.MenuNo = Sys_Button.MenuNo
 WHERE (((CF_User.LoginName)="test1") AND ((Sys_Menu.MenuName)="订单"));
 ##截图
-![image](https://github.com/masery09143521/MIS/blob/master/RBAC/2.PNG)
+![image](https://github.com/masery09143521/MIS/blob/master/RBAC/2.png)
 ##伪代码
 1、根据登录名称查找人员编号UserID
 2、根据UserID在user_role表查找改人员所对应的角色RoleID
