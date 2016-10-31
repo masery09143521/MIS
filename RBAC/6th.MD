@@ -7,12 +7,12 @@ WHERE (((CF_User.LoginName)="test1") AND ((CF_Privilege.PrivilegeAccess)="Sys_Me
 ###截图
 ![image](https://github.com/masery09143521/MIS/blob/master/RBAC/1.png)
 ###伪代码
-1、根据登录名"test1"查找对应编号UserID
-2、根据UserID在user_role表查找改人员所对应的角色RoleID
-3、CF_Privilege表连接CF_Role表并查找对应角色
-PrivilegeMasterKey=RoleID 
-CF_Privilege表连接Sys_Menu表并查找对应菜单
-PrivilegeAccessKey=MenuID
+1、根据登录名"test1"查找对应编号UserID  
+2、根据UserID在user_role表查找改人员所对应的角色RoleID  
+3、CF_Privilege表连接CF_Role表并查找对应角色  
+PrivilegeMasterKey=RoleID     
+CF_Privilege表连接Sys_Menu表并查找对应菜单  
+PrivilegeAccessKey=MenuID  
 并且 权限属性为Permit   并且   权限为Sys_Menu的数据
   
 ##对订单(order)页面中的操作权限(sys_button)
